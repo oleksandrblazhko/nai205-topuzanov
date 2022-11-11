@@ -1,1 +1,1 @@
-![Диаграмма lab2](https://user-images.githubusercontent.com/79829528/201321968-874a255e-1004-4e25-a6a9-4bc083bcbceb.png)
+![Диаграмма lab2](https://user-images.githubusercontent.com/79829528/201322105-086bfab3-02c7-4b0d-bbb2-08ad67238baf.png)
