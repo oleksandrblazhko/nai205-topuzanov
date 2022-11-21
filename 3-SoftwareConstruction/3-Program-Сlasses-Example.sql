@@ -52,10 +52,10 @@ CREATE TYPE KUser_List IS TABLE OF KUser;
 /
 
 /* Cтворення об'єктного типу (класу) Manager, 
-що успадковує об'єктний тип Employee */
+що успадковує об'єктний тип Employee 
 CREATE OR REPLACE TYPE Manager UNDER KUser (
     manage KUser_List, -- список співробітників, якими керує менеджер
-	/* перевизначення методу-процедури класу KUser */
+	 перевизначення методу-процедури класу KUser 
     OVERRIDING MEMBER PROCEDURE display 
-);
+);*/
 /
