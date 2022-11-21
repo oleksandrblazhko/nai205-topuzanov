@@ -3,7 +3,7 @@
 при створенні потрібен термінальний символ /
 як при реєстрації звичайного програмного модуля PL/SQL
 */
--- DROP TYPE Location FORCE;
+-- DROP TYPE My_Sulpture FORCE;
 CREATE OR REPLACE TYPE My_Sulpture AS OBJECT (
     SName VARCHAR(15),       -- назва скульптури
     DopInfo VARCHAR(15),      --информация
