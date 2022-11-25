@@ -1,0 +1,16 @@
+name: Hello World Workfloow
+on:
+  push:
+    branches: with_laboratory_work_11
+  
+jobs:
+  HelloWorldWorkfloow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Hello World
+        run: echo 'Hello World'
+
+      - name: Start SQL Linter
+        run: |
+          pip install sqlfluff
+          sqlfluff lint $GITHUB_WORKSPACE/DataSchema.sql --dialect oracle
