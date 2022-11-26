@@ -14,46 +14,28 @@ class TestCasesModified {
 
             CallableStatement cstmt1 = con.prepareCall("{? = call send_message(?,?)}");
             cstmt1.registerOutParameter(1,Types.NUMERIC);
-            cstmt1.setString(2,"текст повідомлення");
-            cstmt1.setString(3,"dsadasasd");
+            cstmt1.setString(2,"user1");
+            cstmt1.setString(3,"p1234");
             cstmt1.executeUpdate();
-            System.out.print("TC1: send_message('текст повідомлення','dsadasasd') очікуваний результат 1, результат:" + cstmt1.getInt(1));
+            System.out.print("TC1: send_message('user1','p1234') очікуваний результат 1, результат:" + cstmt1.getInt(1));
             if(cstmt1.getInt(1) == 1) System.out.println("Passed");
             else{System.out.println("Failed");
                 testcaseResult = -1;}
 
 
-            cstmt1.setString(2,"текст повідомлення");
-            cstmt1.setString(3,"+3806258165251234567892314123");
+            cstmt1.setString(2,"user1");
+            cstmt1.setString(3,"p1234adfsfffffffffffffffffffffffffffff");
             cstmt1.executeUpdate();
-            System.out.print("TC2: send_message('текст повідомлення','+3806258165251234567892314123') очікуваний результат -1, результат:" + cstmt1.getInt(1));
+            System.out.print("TC2: send_message('текст повідомлення','p1234adfsfffffffffffffff') очікуваний результат -1, результат:" + cstmt1.getInt(1));
             if(cstmt1.getInt(1) == -1) System.out.println("Passed");
             else{System.out.println("Failed");
                 testcaseResult = -1;}
 
 
-            cstmt1.setString(2,"текст повідомлення");
-            cstmt1.setString(3,"+730625816525");
+            cstmt1.setString(2,"user1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+            cstmt1.setString(3,"p1234");
             cstmt1.executeUpdate();
-            System.out.print("TC3: send_message('текст повідомлення','+730625816525') очікуваний результат -1, результат:" + cstmt1.getInt(1));
-            if(cstmt1.getInt(1) == -1) System.out.println("Passed");
-            else{System.out.println("Failed");
-                testcaseResult = -1;}
-
-
-            cstmt1.setString(2,"текст повідомлення");
-            cstmt1.setString(3,"+38062asdg525");
-            cstmt1.executeUpdate();
-            System.out.print("TC4: send_message('текст повідомлення','+38062asdg525') очікуваний результат -1, результат:" + cstmt1.getInt(1));
-            if(cstmt1.getInt(1) == -1) System.out.println("Passed");
-            else{System.out.println("Failed");
-                testcaseResult = -1;}
-
-
-            cstmt1.setString(2,"текст повідомленнuhasbdiasdbaidbasdbasdbsadjasdя");
-            cstmt1.setString(3,"+380625816525");
-            cstmt1.executeUpdate();
-            System.out.print("TC5: send_message('текст повідомленнuhasbdiasdbaidbasdbasdbsadjasdя','+380625816525') очікуваний результат -1, результат:" + cstmt1.getInt(1));
+            System.out.print("TC5: send_message('user1aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','p1234') очікуваний результат -1, результат:" + cstmt1.getInt(1));
             if(cstmt1.getInt(1) == -1) System.out.println("Passed");
             else{System.out.println("Failed");
                 testcaseResult = -1;}
