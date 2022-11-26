@@ -1,13 +1,16 @@
-name: hello World Workflow
+name: SQL Linter
 on:
   push:
     branches: LW11-2
   
 jobs:
-  helloWorldWorkflow:
+  SqlLinter:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Hello World
-        run: echo "Hello world"
+      - name: Checkout Code in Repo
+        uses: "actions/checkout@v3"
 
- 
+      - name: Start SQL Linter
+        run: |
+          pip install sqlfluff
+          sqlfluff lint $GITHUB_WORKSPACE/DataSchema.sql --dialect oracle
